@@ -1,0 +1,14 @@
+{
+  "importOrder": [
+    "^react$",
+    "@geobuff",
+    "<THIRD_PARTY_MODULES>",
+    "/context/",
+    "/containers/",
+    "/hooks/",
+    "/components/",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
