@@ -16,6 +16,6 @@ const Template: ComponentStory<typeof Twemoji> = (args: TwemojiProps) => (
 export const Default = Template.bind({});
 Default.args = {
   emoji: "👋",
-  height: "56px",
-  width: "56px",
+  height: 56,
+  width: 56,
 };
