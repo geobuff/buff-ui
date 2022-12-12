@@ -1,21 +1,17 @@
 import React from "react";
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-
 import { Twemoji, TwemojiProps } from "./Twemoji";
 
 export default {
-  title: "UI/Twemoji",
+  title: "Components/Twemoji",
   component: Twemoji,
-} as ComponentMeta<typeof Twemoji>;
+};
 
-const Template: ComponentStory<typeof Twemoji> = (args: TwemojiProps) => (
-  <Twemoji {...args} />
-);
+const Template = (args: TwemojiProps) => <Twemoji {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   emoji: "👋",
-  height: 56,
-  width: 56,
+  height: 24,
+  width: 24,
 };

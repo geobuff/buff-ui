@@ -3,7 +3,10 @@ const webpack = require("webpack");
 
 module.exports = {
   stories: ["../src/components/**/*.stories.tsx"],
-  addons: ["@storybook/addon-essentials"],
+  addons: ["@storybook/addon-essentials", "@chakra-ui/storybook-addon"],
+  features: {
+    emotionAlias: false,
+  },
   core: {
     builder: "webpack5",
   },
