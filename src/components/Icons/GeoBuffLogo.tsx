@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
-export interface GeoBuffLogoProps {
-  height?: number | string;
-  width?: number | string;
+import { IconProps } from "./Icons.types";
+
+export interface GeoBuffLogoProps extends IconProps {
   isGrayScale?: boolean;
   armColor?: string;
   badgeColor?: string;
