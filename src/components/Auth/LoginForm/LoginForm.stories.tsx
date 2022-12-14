@@ -17,7 +17,6 @@ const Template = (args: LoginFormProps) => (
 export const Default = Template.bind({});
 Default.args = {
   shouldRenderOnMobile: true,
-  error: "",
   linkMessage: "Don't have an account?",
   linkAction: "Sign up today",
   children: "Form content goes here...",

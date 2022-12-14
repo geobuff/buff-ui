@@ -4,21 +4,25 @@ import { Box, BoxProps, ChakraProvider, Flex } from "@chakra-ui/react";
 import { use100vh } from "react-div-100vh";
 import { useSwipeable } from "react-swipeable";
 
-interface Props extends BoxProps {
+import { ErrorAlertBanner } from "../ErrorAlertBanner";
+
+export interface MainViewProps extends BoxProps {
   children?: React.ReactNode;
   isAppMobile?: boolean;
   isSimplePage?: boolean;
   hasFooter?: boolean;
+  error?: string;
   navigationContent?: React.ReactNode;
   footerContent?: React.ReactNode;
   onIsSidebarOpenChange?: (isOpen: boolean) => void;
 }
 
-export const MainView: FC<Props> = ({
+export const MainView: FC<MainViewProps> = ({
   children = null,
   isAppMobile = false,
   isSimplePage = false,
   hasFooter = true,
+  error = "",
   navigationContent = null,
   footerContent = null,
   onIsSidebarOpenChange,
@@ -35,6 +39,7 @@ export const MainView: FC<Props> = ({
 
   return (
     <ChakraProvider>
+      <ErrorAlertBanner error={error} />
       <Flex
         as="main"
         direction="column"
