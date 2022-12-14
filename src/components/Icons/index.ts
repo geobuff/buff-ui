@@ -12,3 +12,4 @@ export * from "./Instagram";
 export * from "./Reddit";
 export * from "./SolidSuccessCircle";
 export * from "./ArrowLeft";
+export * from "./SolidSubtractCircle";

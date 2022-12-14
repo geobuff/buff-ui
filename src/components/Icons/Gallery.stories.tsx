@@ -12,6 +12,7 @@ import { IconProps } from "./Icons.types";
 import { Instagram } from "./Instagram";
 import { QuestionMark } from "./QuestionMark";
 import { Reddit } from "./Reddit";
+import { SolidSubtractCircle } from "./SolidSubtractCircle";
 import { SolidSuccessCircle } from "./SolidSuccessCircle";
 import { Twitch } from "./Twitch";
 import { Twitter } from "./Twitter";
@@ -35,6 +36,7 @@ const Template = (args: IconProps) => (
     <Twitter {...args} />
     <YouTube {...args} />
     <SolidSuccessCircle />
+    <SolidSubtractCircle />
     <ArrowLeft />
   </HStack>
 );
