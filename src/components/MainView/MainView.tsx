@@ -1,13 +1,16 @@
 import React, { FC } from "react";
 
 import { Box, BoxProps, ChakraProvider, Flex } from "@chakra-ui/react";
+import { Dict } from "@chakra-ui/utils";
 import { use100vh } from "react-div-100vh";
 import { useSwipeable } from "react-swipeable";
 
+import { theme as BuffUITheme } from "../../styles/theme";
 import { ErrorAlertBanner } from "../ErrorAlertBanner";
 
 export interface MainViewProps extends BoxProps {
   children?: React.ReactNode;
+  theme?: Dict;
   isAppMobile?: boolean;
   isSimplePage?: boolean;
   hasFooter?: boolean;
@@ -19,6 +22,7 @@ export interface MainViewProps extends BoxProps {
 
 export const MainView: FC<MainViewProps> = ({
   children = null,
+  theme = BuffUITheme,
   isAppMobile = false,
   isSimplePage = false,
   hasFooter = true,
@@ -38,7 +42,7 @@ export const MainView: FC<MainViewProps> = ({
   });
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <ErrorAlertBanner error={error} />
       <Flex
         as="main"

@@ -13,3 +13,5 @@ export * from "./Reddit";
 export * from "./SolidSuccessCircle";
 export * from "./ArrowLeft";
 export * from "./SolidSubtractCircle";
+export * from "./Search";
+export * from "./SolidCloseCircle";

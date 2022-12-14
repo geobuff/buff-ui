@@ -5,3 +5,5 @@ export * from "./Footer";
 export * from "./Auth";
 export * from "./ErrorAlertBanner";
 export * from "./MainView";
+export * from "./HeroBanner";
+export * from "./HomeHeader";
