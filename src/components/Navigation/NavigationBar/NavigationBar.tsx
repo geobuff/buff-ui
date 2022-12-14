@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 
-import { Box, ChakraProvider, Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { Squash as Hamburger } from "hamburger-react";
 
 import { NavigationSidebar } from "../NavigationSidebar/NavigationSidebar";
@@ -63,7 +63,7 @@ export const NavigationBar: FC<NavigationBarProps> = ({
   );
 
   return (
-    <ChakraProvider>
+    <>
       <Box
         m={0}
         px={{ base: 3, md: 5 }}
@@ -88,6 +88,6 @@ export const NavigationBar: FC<NavigationBarProps> = ({
           {sidebarContent}
         </NavigationSidebar>
       )}
-    </ChakraProvider>
+    </>
   );
 };

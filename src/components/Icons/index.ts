@@ -1,5 +1,7 @@
 export * from "./Icons.types";
 export * from "./GeoBuffLogo";
+export * from "./Earth";
+export * from "./QuestionMark";
 export * from "./Discord";
 export * from "./GitHub";
 export * from "./Twitter";

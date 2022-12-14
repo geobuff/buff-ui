@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { ChakraProvider, Flex, Link, Text } from "@chakra-ui/react";
+import { Flex, Link, Text } from "@chakra-ui/react";
 
 import { FooterLink, FooterVariant } from "./Footer.types";
 
@@ -173,9 +173,5 @@ export const Footer: FC<FooterProps> = ({
     </Flex>
   );
 
-  return (
-    <ChakraProvider>
-      {variant === FooterVariant.SIMPLE ? simpleFooter : extendedFooter}
-    </ChakraProvider>
-  );
+  return variant === FooterVariant.SIMPLE ? simpleFooter : extendedFooter;
 };

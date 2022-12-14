@@ -3,6 +3,7 @@ import React from "react";
 import { Box, FormControl, Link, Select, Text } from "@chakra-ui/react";
 
 import { GeoBuffLogo } from "../../Icons";
+import { MainView } from "../../MainView";
 import {
   NavigationBar,
   NavigationBarProps,
@@ -62,7 +63,7 @@ export const NavigationBarTemplate = (
     </Box>
   );
 
-  return (
+  const navigationContent = (
     <NavigationBar
       desktopLeftContent={desktopLeftContent}
       desktopRightContent={desktopRightContent}
@@ -72,4 +73,6 @@ export const NavigationBarTemplate = (
       {...args}
     />
   );
+
+  return <MainView navigationContent={navigationContent} />;
 };

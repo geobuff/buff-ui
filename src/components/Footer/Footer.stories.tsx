@@ -3,6 +3,7 @@ import React from "react";
 import { Text } from "@chakra-ui/react";
 
 import { GeoBuffLogo } from "../Icons";
+import { MainView } from "../MainView";
 import { Footer, FooterProps } from "./Footer";
 import { FooterVariant } from "./Footer.types";
 import { socialIcons } from "./Templates/SocialIcons";
@@ -12,7 +13,9 @@ export default {
   component: Footer,
 };
 
-const Template = (args: FooterProps) => <Footer {...args} />;
+const Template = (args: FooterProps) => (
+  <MainView footerContent={<Footer {...args} />} />
+);
 
 export const Simple = Template.bind({});
 Simple.args = {
