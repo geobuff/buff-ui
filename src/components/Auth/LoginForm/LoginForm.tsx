@@ -8,7 +8,7 @@ import { AuthView } from "../AuthView";
 import { RegisterLink } from "./RegisterLink";
 
 export interface LoginFormProps {
-  chikdren?: React.ReactNode;
+  children?: React.ReactNode;
   shouldRenderOnMobile: boolean;
   logo?: React.ReactNode;
   heading?: string;
