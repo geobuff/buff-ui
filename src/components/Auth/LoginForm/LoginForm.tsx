@@ -14,6 +14,7 @@ export interface LoginFormProps {
   heading?: string;
   linkMessage?: string;
   linkAction?: string;
+  linkHref?: string;
 }
 
 export const LoginForm: FC<LoginFormProps> = ({
@@ -23,6 +24,7 @@ export const LoginForm: FC<LoginFormProps> = ({
   heading = "",
   linkMessage = "",
   linkAction = "",
+  linkHref = "",
 }) => {
   const content = (
     <>
@@ -42,10 +44,14 @@ export const LoginForm: FC<LoginFormProps> = ({
     </>
   );
 
+  const link = (
+    <RegisterLink message={linkMessage} action={linkAction} href={linkHref} />
+  );
+
   return shouldRenderOnMobile ? (
     <>
       <Box position="absolute" top={0} right={0}>
-        <RegisterLink message={linkMessage} action={linkAction} />
+        {link}
       </Box>
       <AuthView marginTop={{ base: 6, md: 16 }}>
         <AuthCard marginX="auto" marginTop={5} marginBottom={3} width={375}>
@@ -56,7 +62,7 @@ export const LoginForm: FC<LoginFormProps> = ({
   ) : (
     <Flex direction="column" padding={5}>
       {content}
-      <RegisterLink message={linkMessage} action={linkAction} />
+      {link}
     </Flex>
   );
 };

@@ -2,18 +2,22 @@ import React, { FC } from "react";
 
 import { Flex, Link, Text } from "@chakra-ui/react";
 
-export interface RegisterLinkProps {
+export interface LoginLinkProps {
   message?: string;
   action?: string;
   href?: string;
 }
 
-export const RegisterLink: FC<RegisterLinkProps> = ({
+export const LoginLink: FC<LoginLinkProps> = ({
   message = "",
   action = "",
   href = "",
 }) => (
-  <Flex direction="row" margin={{ sm: 3, md: 5 }} marginTop={{ base: 2 }}>
+  <Flex
+    direction="row"
+    marginTop={{ base: 3, md: 5 }}
+    marginRight={{ base: 0, md: 5 }}
+  >
     <Text fontSize="14px" marginRight={1} fontWeight="500">
       {message}
     </Text>
