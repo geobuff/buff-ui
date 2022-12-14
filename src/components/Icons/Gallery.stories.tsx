@@ -2,6 +2,7 @@ import React from "react";
 
 import { HStack } from "@chakra-ui/react";
 
+import { ArrowLeft } from "./ArrowLeft";
 import { Discord } from "./Discord";
 import { Earth } from "./Earth";
 import { Facebook } from "./Facebook";
@@ -11,6 +12,7 @@ import { IconProps } from "./Icons.types";
 import { Instagram } from "./Instagram";
 import { QuestionMark } from "./QuestionMark";
 import { Reddit } from "./Reddit";
+import { SolidSuccessCircle } from "./SolidSuccessCircle";
 import { Twitch } from "./Twitch";
 import { Twitter } from "./Twitter";
 import { YouTube } from "./YouTube";
@@ -32,6 +34,8 @@ const Template = (args: IconProps) => (
     <Twitch {...args} />
     <Twitter {...args} />
     <YouTube {...args} />
+    <SolidSuccessCircle />
+    <ArrowLeft />
   </HStack>
 );
 

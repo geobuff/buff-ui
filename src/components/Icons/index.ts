@@ -10,3 +10,5 @@ export * from "./Twitch";
 export * from "./Facebook";
 export * from "./Instagram";
 export * from "./Reddit";
+export * from "./SolidSuccessCircle";
+export * from "./ArrowLeft";
