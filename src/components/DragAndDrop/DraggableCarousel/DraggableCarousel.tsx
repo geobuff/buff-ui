@@ -2,8 +2,9 @@ import React, { FC, useEffect } from "react";
 
 import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import Carousel, { ResponsiveType } from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
+// Uncomment for local development.
+// import "react-multi-carousel/lib/styles.css";
 import { DelayedRender } from "../../DelayedRender";
 import { DragItem } from "../DragAndDrop.types";
 import { RESPONSIVE_CONFIG } from "./DraggableCarousel.types";

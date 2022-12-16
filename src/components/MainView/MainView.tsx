@@ -5,7 +5,8 @@ import { Dict } from "@chakra-ui/utils";
 import { use100vh } from "react-div-100vh";
 import { useSwipeable } from "react-swipeable";
 
-import "../../styles/globals.css";
+// Reintroduce this once css bundling fixed.
+// import "../../styles/globals.css";
 import { theme as BuffUITheme } from "../../styles/theme";
 import { ErrorAlertBanner } from "../ErrorAlertBanner";
 
