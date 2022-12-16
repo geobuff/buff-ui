@@ -15,3 +15,4 @@ export * from "./ArrowLeft";
 export * from "./SolidSubtractCircle";
 export * from "./Search";
 export * from "./SolidCloseCircle";
+export * from "./ArrowRight";

@@ -1,0 +1,34 @@
+.fade-in {
+  animation: animation-fade-in 0.45s;
+}
+
+.fade-out {
+  animation: animation-fade-out 0.45s forwards;
+}
+
+@keyframes animation-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}

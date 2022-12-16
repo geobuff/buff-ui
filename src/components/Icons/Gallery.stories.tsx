@@ -3,6 +3,7 @@ import React from "react";
 import { HStack } from "@chakra-ui/react";
 
 import { ArrowLeft } from "./ArrowLeft";
+import { ArrowRight } from "./ArrowRight";
 import { Discord } from "./Discord";
 import { Earth } from "./Earth";
 import { Facebook } from "./Facebook";
@@ -40,6 +41,7 @@ const Template = (args: IconProps) => (
     <SolidSuccessCircle />
     <SolidSubtractCircle />
     <ArrowLeft />
+    <ArrowRight />
     <Search />
     <SolidCloseCircle />
   </HStack>
