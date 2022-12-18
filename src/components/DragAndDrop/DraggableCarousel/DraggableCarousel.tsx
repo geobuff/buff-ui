@@ -3,7 +3,7 @@ import React, { FC, useEffect } from "react";
 import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import Carousel, { ResponsiveType } from "react-multi-carousel";
 
-// Uncomment for local development.
+// Temporarily commented out until we can figure out how to import css files in Next.js.
 // import "react-multi-carousel/lib/styles.css";
 import { DelayedRender } from "../../DelayedRender";
 import { DragItem } from "../DragAndDrop.types";

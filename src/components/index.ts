@@ -10,3 +10,4 @@ export * from "./HomeHeader";
 export * from "./HeroHeader";
 export * from "./DragAndDrop";
 export * from "./DelayedRender";
+export * from "./SVGMap";

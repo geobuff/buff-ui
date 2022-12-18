@@ -1,6 +1,6 @@
 {
   "name": "@geobuff/buff-ui",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "GeoBuff Component Library",
   "main": "/dist",
   "repository": {
@@ -58,6 +58,7 @@
     "@storybook/manager-webpack5": "^6.5.14",
     "@storybook/react": "^6.5.14",
     "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.4.0",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/jest": "^27.4.0",
     "@types/react": "^18.0.26",
