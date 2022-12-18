@@ -10,4 +10,6 @@ export const theme = extendTheme({
     Input,
     Table,
   },
+  initialColorMode: "light",
+  useSystemColorMode: false,
 });
