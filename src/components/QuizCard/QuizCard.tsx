@@ -10,9 +10,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import { Twemoji } from "../Twemoji";
+
 export interface QuizCardProps extends FlexProps {
   isMobile?: boolean;
   isEnabled?: boolean;
+  isVerified?: boolean;
   href?: string;
   heading?: string;
   image?: JSX.Element;
@@ -23,6 +26,7 @@ export interface QuizCardProps extends FlexProps {
 export const QuizCard: FC<QuizCardProps> = ({
   isMobile = false,
   isEnabled = true,
+  isVerified = false,
   href = "",
   heading = "",
   image = null,
@@ -52,6 +56,16 @@ export const QuizCard: FC<QuizCardProps> = ({
             noOfLines={2}
             _groupHover={{ textDecoration: "underline" }}
           >
+            {!isMobile && isVerified && (
+              <Flex
+                direction="column"
+                justifyContent="center"
+                float="left"
+                mr={1}
+              >
+                <Twemoji emoji="✅" width="20px" height="20px" mt="3.5px" />
+              </Flex>
+            )}{" "}
             {heading}
           </Text>
         </Flex>
@@ -73,36 +87,34 @@ export const QuizCard: FC<QuizCardProps> = ({
     </Flex>
   );
 
-  return (
-    <Link href={isEnabled ? href : "/"}>
-      {isMobile ? (
-        <Box
-          display="inline-block"
-          width="180px"
-          height="210px"
-          marginRight={3}
-          paddingY={3}
-          opacity={!isEnabled ? "0.25" : "1"}
-        >
-          {content}
-        </Box>
-      ) : (
-        <AspectRatio
-          maxWidth="260px"
-          minHeight={{
-            base: "180px",
-            sm: "206px",
-            md: "216px",
-          }}
-          maxHeight="230px"
-          ratio={3 / 2}
-          transition="all 150ms ease-out"
-          _hover={isEnabled && { transform: "scale(1.030)" }}
-          opacity={!isEnabled ? "0.25" : "1"}
-        >
-          {content}
-        </AspectRatio>
-      )}
-    </Link>
+  const container = isMobile ? (
+    <Box
+      display="inline-block"
+      width="180px"
+      height="210px"
+      marginRight={3}
+      paddingY={3}
+      opacity={!isEnabled ? "0.25" : "1"}
+    >
+      {content}
+    </Box>
+  ) : (
+    <AspectRatio
+      maxWidth="260px"
+      minHeight={{
+        base: "180px",
+        sm: "206px",
+        md: "216px",
+      }}
+      maxHeight="230px"
+      ratio={3 / 2}
+      transition="all 150ms ease-out"
+      _hover={isEnabled && { transform: "scale(1.030)" }}
+      opacity={!isEnabled ? "0.25" : "1"}
+    >
+      {content}
+    </AspectRatio>
   );
+
+  return href && isEnabled ? <Link href={href}>{container}</Link> : container;
 };

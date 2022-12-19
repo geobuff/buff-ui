@@ -14,6 +14,7 @@ export const Default = Template.bind({});
 Default.args = {
   isMobile: false,
   isEnabled: true,
+  isVerified: false,
   href: "/quiz/countries-of-the-world",
   heading: "Countries of the World",
   image,
