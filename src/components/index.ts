@@ -14,3 +14,7 @@ export * from "./SVGMap";
 export * from "./CardListSection";
 export * from "./CardList";
 export * from "./QuizCard";
+export * from "./Card";
+export * from "./LoadingImage";
+export * from "./CustomFlag";
+export * from "./Results";
