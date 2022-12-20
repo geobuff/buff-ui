@@ -1,7 +1,6 @@
 import React from "react";
 
 import { MainView } from "../../MainView";
-import { LeaderboardEntry } from "../Game.types";
 import { GameOverModal, GameOverModalProps } from "./GameOverModal";
 
 export default {
@@ -22,17 +21,6 @@ const DEFAULT_PROPS = {
   time: 900,
   isLoggedIn: false,
   isLoading: false,
-  existingEntry: {
-    id: 0,
-    quizId: 1,
-    userId: 1,
-    username: "testing",
-    countryCode: "nz",
-    score: 34,
-    time: 500,
-    added: new Date(),
-    rank: 1,
-  },
   isOpen: true,
   isSubmitting: false,
   isNotchedIphone: false,
@@ -60,11 +48,44 @@ const DEFAULT_PROPS = {
   usernameText: "Username",
 };
 
-export const Default = Template.bind({});
-Default.args = DEFAULT_PROPS;
+export const ScoreQuizNotLoggedIn = Template.bind({});
+ScoreQuizNotLoggedIn.args = {
+  ...DEFAULT_PROPS,
+};
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
+export const ScoreQuizLoggedIn = Template.bind({});
+ScoreQuizLoggedIn.args = {
   ...DEFAULT_PROPS,
   isLoggedIn: true,
+};
+
+export const LeaderboardQuizNotLoggedIn = Template.bind({});
+LeaderboardQuizNotLoggedIn.args = {
+  ...DEFAULT_PROPS,
+  quizScoreType: "leaderboard",
+};
+
+export const LeaderboardQuizNoExistingEntry = Template.bind({});
+LeaderboardQuizNoExistingEntry.args = {
+  ...DEFAULT_PROPS,
+  quizScoreType: "leaderboard",
+  isLoggedIn: true,
+};
+
+export const LeaderboardQuizExistingEntry = Template.bind({});
+LeaderboardQuizExistingEntry.args = {
+  ...DEFAULT_PROPS,
+  quizScoreType: "leaderboard",
+  isLoggedIn: true,
+  existingEntry: {
+    id: 0,
+    quizId: 1,
+    userId: 1,
+    username: "testing",
+    countryCode: "nz",
+    score: 34,
+    time: 500,
+    added: new Date(),
+    rank: 1,
+  },
 };

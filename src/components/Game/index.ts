@@ -3,3 +3,4 @@ export * from "./GameInputBanner";
 export * from "./GameInputCard";
 export * from "./GameOverModal";
 export * from "./GameSidebar";
+export * from "./Game.types";

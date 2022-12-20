@@ -19,3 +19,5 @@ export interface LeaderboardEntry {
   added: Date;
   rank: number;
 }
+
+export type QuizScoreType = "score" | "leaderboard";

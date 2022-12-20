@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { Box, Button, Text, TextProps } from "@chakra-ui/react";
 
-import { LeaderboardEntry } from "../../Game.types";
+import { LeaderboardEntry, QuizScoreType } from "../../Game.types";
 import { GameOverModalExistingEntry } from "../GameOverModalExistingEntry";
 
 const ExplainerText: FC<TextProps> = ({ children = null, ...props }) => (
@@ -18,6 +18,7 @@ const ExplainerText: FC<TextProps> = ({ children = null, ...props }) => (
 );
 
 export interface GameOverModalExplainerTextProps {
+  quizScoreType?: QuizScoreType;
   existingEntry?: LeaderboardEntry;
   isLoggedIn?: boolean;
   isLoading?: boolean;
@@ -35,13 +36,13 @@ export interface GameOverModalExplainerTextProps {
   scoreText?: string;
   timeText?: string;
   usernameText?: string;
-  onSubmit?: (existingEntry: LeaderboardEntry) => void;
   onRedirectWithScore?: (path: string) => void;
 }
 
 export const GameOverModalExplainerText: FC<
   GameOverModalExplainerTextProps
 > = ({
+  quizScoreType = "score",
   existingEntry = null,
   isLoggedIn = false,
   isLoading = true,
@@ -59,40 +60,39 @@ export const GameOverModalExplainerText: FC<
   scoreText = "",
   timeText = "",
   usernameText = "",
-  onSubmit = (existingEntry: LeaderboardEntry): void => {},
   onRedirectWithScore = (path: string): void => {},
 }) => {
-  const scoreQuizNotLoggedIn = !onSubmit && !isLoggedIn;
-  const scoreQuizLoggedIn = !onSubmit && isLoggedIn;
-  const leaderboardQuizNotLoggedIn = onSubmit && !isLoggedIn;
-
-  if (scoreQuizNotLoggedIn) {
-    return (
-      <ExplainerText>
-        {explainerTextOne}
-        <Button
-          variant="link"
-          onClick={(): void => onRedirectWithScore("/login")}
-          fontSize="14px"
-          minWidth="0"
-        >
-          {explainerActionOne}
-        </Button>
-        {explainerTextTwo}
-        <Button
-          variant="link"
-          onClick={(): void => onRedirectWithScore("/register")}
-          fontSize="14px"
-          minWidth="0"
-        >
-          {explainerActionTwo}
-        </Button>{" "}
-        {submitAScoreText}
-      </ExplainerText>
-    );
+  if (quizScoreType === "score") {
+    if (!isLoggedIn) {
+      return (
+        <ExplainerText>
+          {explainerTextOne}
+          <Button
+            variant="link"
+            onClick={(): void => onRedirectWithScore("/login")}
+            fontSize="14px"
+            minWidth="0"
+          >
+            {explainerActionOne}
+          </Button>
+          {explainerTextTwo}
+          <Button
+            variant="link"
+            onClick={(): void => onRedirectWithScore("/register")}
+            fontSize="14px"
+            minWidth="0"
+          >
+            {explainerActionTwo}
+          </Button>{" "}
+          {submitAScoreText}
+        </ExplainerText>
+      );
+    } else {
+      return <ExplainerText>{scoreQuizLoggedInExplainer}</ExplainerText>;
+    }
   }
 
-  if (leaderboardQuizNotLoggedIn) {
+  if (!isLoggedIn) {
     return (
       <ExplainerText>
         {explainerTextOne}
@@ -118,10 +118,6 @@ export const GameOverModalExplainerText: FC<
     );
   }
 
-  if (scoreQuizLoggedIn) {
-    return <ExplainerText>{scoreQuizLoggedInExplainer}</ExplainerText>;
-  }
-
   if (!isLoading && !existingEntry) {
     return <ExplainerText>{noExistingEntryExplainer}</ExplainerText>;
   }
@@ -133,8 +129,8 @@ export const GameOverModalExplainerText: FC<
       </ExplainerText>
       <Box marginY={3}>
         <GameOverModalExistingEntry
-          isLoading={isLoading}
           {...existingEntry}
+          isLoading={isLoading}
           rankText={rankText}
           usernameText={usernameText}
           timeText={timeText}

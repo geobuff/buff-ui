@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { SVGBase, SVGElement } from "./SVGMap.types";
 
 const getChild = (
+  index: number,
   element: SVGElement,
   onPathMouseOver: any,
   onPathMouseMove: any,
@@ -12,7 +13,7 @@ const getChild = (
     case "path":
       return (
         <path
-          key={element.id}
+          key={index}
           id={element.id}
           name={element.name}
           aria-label={element.name}
@@ -26,7 +27,7 @@ const getChild = (
     case "polygon":
       return (
         <polygon
-          key={element.id}
+          key={index}
           id={element.id}
           name={element.name}
           aria-label={element.name}
@@ -40,7 +41,7 @@ const getChild = (
     case "polyline":
       return (
         <polyline
-          key={element.id}
+          key={index}
           id={element.id}
           name={element.name}
           aria-label={element.name}
@@ -54,7 +55,7 @@ const getChild = (
     case "circle":
       return (
         <circle
-          key={element.id}
+          key={index}
           id={element.id}
           name={element.name}
           aria-label={element.name}
@@ -70,7 +71,7 @@ const getChild = (
     case "rect":
       return (
         <rect
-          key={element.id}
+          key={index}
           id={element.id}
           name={element.name}
           aria-label={element.name}
@@ -88,7 +89,7 @@ const getChild = (
     case "line":
       return (
         <line
-          key={element.id}
+          key={index}
           id={element.id}
           name={element.name}
           aria-label={element.name}
@@ -102,7 +103,7 @@ const getChild = (
     case "image":
       return (
         <image
-          key={element.id}
+          key={index}
           id={element.id}
           name={element.name}
           aria-label={element.name}
@@ -120,7 +121,7 @@ const getChild = (
     case "defs":
       return (
         <defs
-          key={element.id}
+          key={index}
           id={element.id}
           name={element.name}
           aria-label={element.name}
@@ -163,8 +164,8 @@ export const SVGMap: FC<SVGMapProps> = ({
     aria-label={map.label}
     style={mapStyle}
   >
-    {map.elements?.map((element: SVGElement) =>
-      getChild(element, onPathMouseOver, onPathMouseMove, onPathMouseOut)
+    {map.elements?.map((element: SVGElement, index: number) =>
+      getChild(index, element, onPathMouseOver, onPathMouseMove, onPathMouseOut)
     )}
   </svg>
 );

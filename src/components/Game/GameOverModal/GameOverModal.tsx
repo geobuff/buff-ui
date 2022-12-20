@@ -4,13 +4,14 @@ import { Box, Button, Divider, Flex, Text, Tooltip } from "@chakra-ui/react";
 
 import { ArrowLeft, SolidQuestionMarkCircle } from "../../Icons";
 import { Modal } from "../../Modal";
-import { LeaderboardEntry } from "../Game.types";
+import { LeaderboardEntry, QuizScoreType } from "../Game.types";
 import { secondsToMinutesString } from "../Game.utils";
 import { GameOverModalExplainerText } from "./GameOverModalExplainerText";
 
 const divider = <Divider borderColor="#E3E1E1" borderWidth={1} my={6} />;
 
 export interface GameOverModalProps {
+  quizScoreType?: QuizScoreType;
   quizName?: string;
   maxScore?: number;
   score?: number;
@@ -45,6 +46,7 @@ export interface GameOverModalProps {
 }
 
 export const GameOverModal: FC<GameOverModalProps> = ({
+  quizScoreType = "score",
   quizName = "",
   maxScore = 0,
   score = 0,
@@ -178,6 +180,7 @@ export const GameOverModal: FC<GameOverModalProps> = ({
 
         <Box marginTop={8}>
           <GameOverModalExplainerText
+            quizScoreType={quizScoreType}
             existingEntry={existingEntry}
             isLoggedIn={isLoggedIn}
             isLoading={isLoading}
@@ -195,7 +198,6 @@ export const GameOverModal: FC<GameOverModalProps> = ({
             scoreText={scoreText}
             timeText={timeText}
             usernameText={usernameText}
-            onSubmit={onSubmit}
             onRedirectWithScore={onRedirectWithScore}
           />
         </Box>
