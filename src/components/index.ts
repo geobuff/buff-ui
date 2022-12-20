@@ -18,3 +18,5 @@ export * from "./Card";
 export * from "./LoadingImage";
 export * from "./CustomFlag";
 export * from "./Results";
+export * from "./Modal";
+export * from "./Game";
