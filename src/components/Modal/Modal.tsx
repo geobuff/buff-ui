@@ -13,12 +13,12 @@ import {
   ModalHeader,
   ModalOverlay,
   ResponsiveValue,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 
 import { ArrowLeft } from "../Icons";
 
 export interface ModalProps extends ChakraModalProps {
+  isMobile?: boolean;
   header?: string | ReactNode;
   body?: ReactNode;
   footer?: ReactNode;
@@ -28,9 +28,10 @@ export interface ModalProps extends ChakraModalProps {
 }
 
 export const Modal: FC<ModalProps> = ({
+  children = null,
+  isMobile = false,
   header,
   body,
-  children,
   footer,
   hasCloseButton = false,
   maxHeight,
@@ -41,8 +42,6 @@ export const Modal: FC<ModalProps> = ({
 }) => {
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [shouldDisplay, setShouldDisplay] = useState(false);
-
-  const isMobile = useBreakpointValue({ base: true, md: false });
 
   useEffect(() => {
     setTimeout(() => {

@@ -32,3 +32,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.react-modal-sheet-drag-indicator {
+  background-color: transparent !important;
+}

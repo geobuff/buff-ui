@@ -11,6 +11,7 @@ import { GameOverModalExplainerText } from "./GameOverModalExplainerText";
 const divider = <Divider borderColor="#E3E1E1" borderWidth={1} my={6} />;
 
 export interface GameOverModalProps {
+  isMobile?: boolean;
   quizScoreType?: QuizScoreType;
   quizName?: string;
   maxScore?: number;
@@ -46,6 +47,7 @@ export interface GameOverModalProps {
 }
 
 export const GameOverModal: FC<GameOverModalProps> = ({
+  isMobile = false,
   quizScoreType = "score",
   quizName = "",
   maxScore = 0,
@@ -93,7 +95,12 @@ export const GameOverModal: FC<GameOverModalProps> = ({
   );
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} footer={footer}>
+    <Modal
+      isMobile={isMobile}
+      isOpen={isOpen}
+      onClose={onClose}
+      footer={footer}
+    >
       <Button
         alignItems="center"
         backgroundColor="transparent"

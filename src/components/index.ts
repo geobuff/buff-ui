@@ -8,7 +8,6 @@ export * from "./MainView";
 export * from "./HeroBanner";
 export * from "./HomeHeader";
 export * from "./HeroHeader";
-export * from "./DragAndDrop";
 export * from "./DelayedRender";
 export * from "./SVGMap";
 export * from "./CardListSection";
