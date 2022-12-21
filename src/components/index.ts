@@ -20,3 +20,7 @@ export * from "./Results";
 export * from "./Modal";
 export * from "./Game";
 export * from "./BottomSheet";
+export * from "./Table";
+export * from "./Sparkles";
+export * from "./DeleteModal";
+export * from "./GameSpinner";
