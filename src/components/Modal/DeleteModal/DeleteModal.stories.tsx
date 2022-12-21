@@ -3,7 +3,7 @@ import React from "react";
 import { DeleteModal, DeleteModalProps } from "./DeleteModal";
 
 export default {
-  title: "Components/DeleteModal",
+  title: "Modal/DeleteModal",
   component: DeleteModal,
 };
 

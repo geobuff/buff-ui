@@ -15,7 +15,7 @@ import {
   ResponsiveValue,
 } from "@chakra-ui/react";
 
-import { ArrowLeft } from "../Icons";
+import { ArrowLeft } from "../../Icons";
 
 export interface ModalProps extends ChakraModalProps {
   isMobile?: boolean;

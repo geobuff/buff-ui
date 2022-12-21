@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { Alert, AlertIcon, Box, Button, Text } from "@chakra-ui/react";
 
-import { Modal } from "../Modal";
+import { Modal } from "..";
 
 export interface DeleteModalProps {
   isOpen?: boolean;

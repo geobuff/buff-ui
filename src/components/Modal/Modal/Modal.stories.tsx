@@ -2,20 +2,20 @@ import React from "react";
 
 import { Button, Flex, Text } from "@chakra-ui/react";
 
-import { MainView } from "../MainView";
+import { MainView } from "../../MainView";
 import { Modal, ModalProps } from "./Modal";
 
 export default {
-  title: "Components/Modal",
+  title: "Modal/Modal",
   component: Modal,
 };
 
 const Template = (args: ModalProps) => (
   <MainView>
     <Modal {...args}>
-      <Flex justifyContent="center">
-        <Text mb={6}>Would you like to eat french fries?</Text>
-      </Flex>
+      <Text ml={6} mb={6}>
+        Would you like to eat french fries?
+      </Text>
     </Modal>
   </MainView>
 );
