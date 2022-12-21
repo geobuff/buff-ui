@@ -20,3 +20,4 @@ export * from "./CustomFlag";
 export * from "./Results";
 export * from "./Modal";
 export * from "./Game";
+export * from "./BottomSheet";
