@@ -16,11 +16,20 @@ const Template = (args: TablePaginationControlsProps) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  shouldRenderOnMobile: true,
+  isMobile: false,
   isLoading: false,
   hasMoreEntries: true,
   page: 0,
-  rank: "0",
+  perPageText: "Per Page",
+  previousText: "Previous",
+  nextText: "Next",
+};
+
+export const Previous = Template.bind({});
+Previous.args = {
+  isMobile: false,
+  isLoading: false,
+  page: 1,
   perPageText: "Per Page",
   previousText: "Previous",
   nextText: "Next",

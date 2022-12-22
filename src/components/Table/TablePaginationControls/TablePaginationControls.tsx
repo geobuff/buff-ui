@@ -5,7 +5,7 @@ import { Box, Button, Flex, Select } from "@chakra-ui/react";
 import { ArrowLeft, ArrowRight } from "../../Icons";
 
 export interface TablePaginationControlsProps {
-  shouldRenderOnMobile?: boolean;
+  isMobile?: boolean;
   isLoading?: boolean;
   hasMoreEntries?: boolean;
   page?: number;
@@ -19,7 +19,7 @@ export interface TablePaginationControlsProps {
 }
 
 export const TablePaginationControls: FC<TablePaginationControlsProps> = ({
-  shouldRenderOnMobile = false,
+  isMobile = false,
   isLoading = false,
   hasMoreEntries = false,
   page = 0,
@@ -62,7 +62,7 @@ export const TablePaginationControls: FC<TablePaginationControlsProps> = ({
           height="20px"
           width="20px"
         />
-        {shouldRenderOnMobile && previousText}
+        {!isMobile && previousText}
       </Button>
 
       <Button
@@ -74,7 +74,7 @@ export const TablePaginationControls: FC<TablePaginationControlsProps> = ({
         width={{ base: "46px", md: "132px" }}
         _hover={{ backgroundColor: "#e6e6e6" }}
       >
-        {shouldRenderOnMobile && nextText}
+        {!isMobile && nextText}
         <ArrowRight
           marginLeft={{ base: 0, md: "6px" }}
           height="20px"

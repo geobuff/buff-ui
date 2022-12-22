@@ -5,14 +5,14 @@ import twemoji from "twemoji";
 
 export interface TwemojiProps extends BoxProps {
   emoji?: string;
-  height?: string | number;
-  width?: string | number;
+  height?: string;
+  width?: string;
 }
 
 export const Twemoji: FC<TwemojiProps> = ({
   emoji = "🇳🇿",
-  height = 24,
-  width = 24,
+  height = "24px",
+  width = "24px",
   ...props
 }) => (
   <Box
