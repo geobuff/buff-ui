@@ -8,7 +8,7 @@
     "declarationMap": true,
     "declarationDir": "./dist",
     "incremental": false,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "jsx": "react-jsx",

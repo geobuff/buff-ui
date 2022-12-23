@@ -8,7 +8,7 @@ import {
 import { WorldCountries } from "./Templates/WorldCountries";
 
 export default {
-  title: "Components/SVGMap",
+  title: "SVGMap/SVGMap",
   component: SVGMap,
 };
 

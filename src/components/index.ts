@@ -23,3 +23,4 @@ export * from "./Table";
 export * from "./Sparkles";
 export * from "./Modal";
 export * from "./GameSpinner";
+export * from "./ImageViewContainer";
