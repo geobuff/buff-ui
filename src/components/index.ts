@@ -25,3 +25,5 @@ export * from "./Modal";
 export * from "./GameSpinner";
 export * from "./ImageViewContainer";
 export * from "./LottieToast";
+export * from "./ProfileUserAvatar";
+export * from "./TeamMemberCard";
