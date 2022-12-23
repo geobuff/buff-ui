@@ -9,6 +9,7 @@
     "declarationDir": "./dist",
     "incremental": false,
     "noImplicitAny": false,
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "jsx": "react-jsx",
