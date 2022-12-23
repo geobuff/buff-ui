@@ -13,6 +13,8 @@ const Template = (args: TableProps) => <Table {...args} />;
 const DEFAULT_PROPS: TableProps = {
   noEntriesMessage: "No entries to display.",
   isLoading: false,
+  rowCount: 10,
+  columnCount: 4,
 };
 
 export const Default = Template.bind({});
@@ -24,7 +26,7 @@ Default.args = {
 
 export const NoEntries = Template.bind({});
 NoEntries.args = {
-  DEFAULT_PROPS,
+  ...DEFAULT_PROPS,
 };
 
 export const Loading = Template.bind({});

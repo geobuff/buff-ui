@@ -3,8 +3,9 @@ import React, { FC } from "react";
 import {
   Alert,
   AlertIcon,
-  Box,
   Table as ChakraTable,
+  TableProps as ChakraTableProps,
+  Flex,
   Skeleton,
   Tbody,
   Th,
@@ -15,8 +16,23 @@ import {
 import { TableCell } from "../TableCell";
 import { TableCellEntry, TableHeadEntry } from "./Table.types";
 
-export interface TableProps {
+const skeleton = <Skeleton height="24px" width="64px" />;
+
+const getSkeleton = (index: number, columnCount: number): JSX.Element => {
+  if (index < columnCount - 1) {
+    return skeleton;
+  }
+
+  return (
+    <Flex justifyContent="flex-end">
+      <Skeleton height="24px" width="64px" />
+    </Flex>
+  );
+};
+
+export interface TableProps extends ChakraTableProps {
   columnCount?: number;
+  rowCount?: number;
   headers?: TableHeadEntry[];
   rows?: TableCellEntry[][];
   isLoading?: boolean;
@@ -25,10 +41,12 @@ export interface TableProps {
 
 export const Table: FC<TableProps> = ({
   columnCount = 0,
+  rowCount = 10,
   headers = [],
   rows = [],
   isLoading = false,
   noEntriesMessage = "",
+  ...props
 }) => {
   if (columnCount === 0 || rows.length === 0) {
     return (
@@ -40,59 +58,59 @@ export const Table: FC<TableProps> = ({
   }
 
   return (
-    <Box overflow="auto">
-      <ChakraTable size="md" variant="striped" colorScheme="gray">
-        <Thead>
-          <Tr>
-            {isLoading ? (
-              <>
-                {[...Array(columnCount)].map((_, index) => (
-                  <Th key={index}>
-                    <Skeleton height="24px" width="64px" />
-                  </Th>
-                ))}
-              </>
-            ) : (
-              <>
-                {headers.map((header, index) => (
-                  <Th key={index} textAlign={header.align ?? "left"}>
-                    {header.node}
-                  </Th>
-                ))}
-              </>
-            )}
-          </Tr>
-        </Thead>
-        <Tbody>
+    <ChakraTable size="md" variant="striped" colorScheme="gray" {...props}>
+      <Thead>
+        <Tr>
           {isLoading ? (
             <>
               {[...Array(columnCount)].map((_, index) => (
-                <TableCell key={index}>
-                  <Skeleton height="24px" width="64px" />
-                </TableCell>
+                <Th key={index}>{getSkeleton(index, columnCount)}</Th>
               ))}
             </>
           ) : (
             <>
-              {rows?.map((row, index) => (
-                <Tr key={index} fontWeight={600}>
-                  {row.map((entry, index) => (
-                    <TableCell
-                      key={index}
-                      isNumeric={entry.isNumeric ?? false}
-                      paddingY={3}
-                      paddingX={6}
-                      {...entry}
-                    >
-                      {entry.node}
-                    </TableCell>
-                  ))}
-                </Tr>
+              {headers.map((header, index) => (
+                <Th key={index} textAlign={header.align ?? "left"}>
+                  {header.node}
+                </Th>
               ))}
             </>
           )}
-        </Tbody>
-      </ChakraTable>
-    </Box>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {isLoading ? (
+          <>
+            {[...Array(rowCount)].map((_, index) => (
+              <Tr key={index}>
+                {[...Array(columnCount)].map((_, index) => (
+                  <TableCell key={index}>
+                    {getSkeleton(index, columnCount)}
+                  </TableCell>
+                ))}
+              </Tr>
+            ))}
+          </>
+        ) : (
+          <>
+            {rows?.map((row, index) => (
+              <Tr key={index} fontWeight={600}>
+                {row.map((entry, index) => (
+                  <TableCell
+                    key={index}
+                    isNumeric={entry.isNumeric ?? false}
+                    paddingY={3}
+                    paddingX={6}
+                    {...entry}
+                  >
+                    {entry.node}
+                  </TableCell>
+                ))}
+              </Tr>
+            ))}
+          </>
+        )}
+      </Tbody>
+    </ChakraTable>
   );
 };

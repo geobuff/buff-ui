@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex, FlexProps } from "@chakra-ui/react";
 
 import { Card } from "../../Card";
 
-export interface TableContainerProps {
+export interface TableContainerProps extends FlexProps {
   children?: React.ReactNode;
   header?: React.ReactNode;
   filters?: React.ReactNode;
@@ -16,6 +16,7 @@ export const TableContainer: FC<TableContainerProps> = ({
   header = null,
   filters = null,
   paginationControls = null,
+  ...props
 }) => (
   <Flex
     direction="column"
@@ -25,6 +26,7 @@ export const TableContainer: FC<TableContainerProps> = ({
     marginTop={{ base: 10, sm: 10, md: 14 }}
     paddingX={3}
     width="100%"
+    {...props}
   >
     {header}
     {filters}
@@ -36,7 +38,7 @@ export const TableContainer: FC<TableContainerProps> = ({
         paddingTop={2}
         paddingBottom={{ base: 1, md: 3 }}
       >
-        {children}
+        <Box overflow="auto">{children}</Box>
         {paginationControls}
       </Flex>
     </Card>
