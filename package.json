@@ -33,6 +33,7 @@
     "@chakra-ui/utils": "^2.0.12",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.9.0",
+    "formik": "^2.2.9",
     "framer-motion": "^6.5.0",
     "hamburger-react": "^2.5.0",
     "react-div-100vh": "^0.7.0",
