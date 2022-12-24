@@ -27,3 +27,8 @@
 .react-modal-sheet-drag-indicator {
   background-color: transparent !important;
 }
+
+.quiz-map-controls {
+  margin-left: 8px;
+  margin-right: 8px;
+}

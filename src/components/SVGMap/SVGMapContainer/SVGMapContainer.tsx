@@ -15,7 +15,6 @@ export interface SVGMapContainerProps {
 export const SVGMapContainer: FC<SVGMapContainerProps> = ({
   children = null,
   isMobile = false,
-  ...props
 }) => {
   const [value, setValue] = useState(defaultValue);
 
@@ -91,7 +90,6 @@ export const SVGMapContainer: FC<SVGMapContainerProps> = ({
             />
           )
         }
-        {...props}
       >
         {({ translation, scale }): React.ReactNode => {
           const transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
