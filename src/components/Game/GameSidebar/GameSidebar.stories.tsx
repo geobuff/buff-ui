@@ -19,4 +19,6 @@ Default.args = {
   heading: "Countries of the World",
   quizId: 1,
   hasLeaderboard: true,
+  shouldTruncateText: true,
+  href: "/quiz/countries-of-the-world",
 };

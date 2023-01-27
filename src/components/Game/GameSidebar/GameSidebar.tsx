@@ -9,6 +9,8 @@ export interface GameSidebarProps {
   heading?: string;
   quizId?: number;
   hasLeaderboard?: boolean;
+  shouldTruncateText?: boolean;
+  href?: string;
 }
 
 export const GameSidebar: FC<GameSidebarProps> = ({
@@ -16,6 +18,8 @@ export const GameSidebar: FC<GameSidebarProps> = ({
   heading = "",
   quizId = 0,
   hasLeaderboard = false,
+  shouldTruncateText = false,
+  href = "",
 }) => (
   <Box
     position="absolute"
@@ -45,6 +49,8 @@ export const GameSidebar: FC<GameSidebarProps> = ({
               hasLeaderboard={hasLeaderboard}
               heading={heading}
               quizId={quizId}
+              shouldTruncateText={shouldTruncateText}
+              href={href}
             />
           </Flex>
           <Divider my={5} borderColor="#E3E1E1" borderWidth={1} />
