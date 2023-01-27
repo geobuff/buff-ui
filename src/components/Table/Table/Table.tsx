@@ -48,7 +48,7 @@ export const Table: FC<TableProps> = ({
   noEntriesMessage = "",
   ...props
 }) => {
-  if (columnCount === 0 || rows.length === 0) {
+  if (!isLoading && (columnCount === 0 || rows.length === 0)) {
     return (
       <Alert status="info" borderRadius={6}>
         <AlertIcon />

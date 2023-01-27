@@ -31,11 +31,11 @@ export const NavigationBarLink: FC<NavigationBarLinkProps> = ({
 }) => (
   <Flex as="nav" {...props}>
     <Link
+      {...(isActive ? activeLinkStyles : {})}
       href={href}
       fontSize="16px"
       fontWeight={600}
       color="gray.600"
-      {...(isActive ? activeLinkStyles : {})}
       style={{
         ...(isActive ? textDecorationStyles : {}),
       }}
