@@ -91,7 +91,7 @@ export const QuizCard: FC<QuizCardProps> = ({
     <Box
       display="inline-block"
       width="180px"
-      height="210px"
+      height="235px"
       marginRight={3}
       paddingY={3}
       opacity={!isEnabled ? "0.25" : "1"}
