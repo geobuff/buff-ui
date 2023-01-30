@@ -18,7 +18,6 @@ export * from "./LoadingImage";
 export * from "./CustomFlag";
 export * from "./Results";
 export * from "./Game";
-export * from "./BottomSheet";
 export * from "./Table";
 export * from "./Sparkles";
 export * from "./Modal";
